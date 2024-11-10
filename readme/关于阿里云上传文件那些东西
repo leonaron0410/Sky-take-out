@@ -1,0 +1,18 @@
+总体流程梳理：
+读取配置文件：Spring Boot 启动时，会加载 application.yml 中的 sky.alioss 配置项，
+并通过 AliOssProperties 类的 @ConfigurationProperties 注解将这些值映射到 Java 对象的属性中。
+
+创建工具类 Bean：OssConfigration 类通过 @Bean 注解，将 AliOssUtil 实例化，并将 AliOssProperties 中的配置信息
+（endpoint, accessKeyId, accessKeySecret, bucketName）传递给 AliOssUtil 的构造方法，创建 AliOssUtil 实例。
+
+文件上传：在实际上传文件时，调用 AliOssUtil 的 upload(byte[] bytes, String objectName) 方法，该方法利用阿里云 OSS SDK，
+将文件上传到指定的 OSS 存储桶，并返回上传后的文件 URL。
+
+类之间的关系：
+AliOssProperties 是一个配置类，它从 application.yml 中读取阿里云 OSS 的配置信息，作为 AliOssUtil 工具类的属性源。
+OssConfigration 是一个 Spring 配置类，它创建了 AliOssUtil 工具类，并将 AliOssProperties 中的配置信息传递给 AliOssUtil。
+AliOssUtil 是实际进行 OSS 操作的工具类，利用从 AliOssProperties 中获取的配置信息，执行文件上传等操作。
+总结：
+AliOssProperties 类从 application.yml 读取阿里云 OSS 的配置。
+OssConfigration 类将 AliOssProperties 提供的信息传递给 AliOssUtil，创建并管理 AliOssUtil 的实例。
+AliOssUtil 利用这些配置执行文件上传，并返回文件的访问路径。
