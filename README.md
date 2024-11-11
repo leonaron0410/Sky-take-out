@@ -21,6 +21,21 @@
 - 前后端通信
   - RESTful API
 
+## 项目功能介绍
+
+项目开发了网页商家管理端和用户微信小程序端，实现了诸多功能如下：
+
+![00b97939-5a54-447e-bdd8-13736002b272](file:///C:/Users/liuyalong/Pictures/Typedown/00b97939-5a54-447e-bdd8-13736002b272.png)
+
+微信小程序点单页面展示：
+![420348d6-c888-4c6d-9adf-94a523d71d8c](file:///C:/Users/liuyalong/Pictures/Typedown/420348d6-c888-4c6d-9adf-94a523d71d8c.png)
+
+web端商家管理页面展示：
+
+![f62fe268-fa46-4528-bb2e-3741024aee31](file:///C:/Users/liuyalong/Pictures/Typedown/f62fe268-fa46-4528-bb2e-3741024aee31.png)
+
+
+
 ## Windows 开发环境搭建
 
 1. 安装 Java JDK 17 并配置环境变量
@@ -114,9 +129,6 @@
    ```
 
 8. 微信前端代码中跳过微信支付功能的调整
-   
    ​![](https://i-blog.csdnimg.cn/direct/fafa93f775154f5cb4e0ddeb5ec99dd2.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​
 
 9. 运行项目
-
-
